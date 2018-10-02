@@ -13,7 +13,7 @@ import dev.viplove.springbootstarter.service.AutowireDependent;
 @SpringBootApplication
 public class SpringBootStarterApplication {
 	
-	@Inject
+	@Autowired
 	UserRepository userRepository;
 	
 	public static void main(String[] args) {
