@@ -14,7 +14,7 @@ import dev.viplove.springbootstarter.service.AutowireDependent;
 public class SpringBootStarterApplication {
 	
 	@Inject
-	UserRepository userRepositor;
+	UserRepository userRepository;
 	
 	public static void main(String[] args) {
 		ApplicationContext applicationContext  = SpringApplication.run(SpringBootStarterApplication.class, args);
@@ -29,6 +29,6 @@ public class SpringBootStarterApplication {
 	public void init() {
 
 		
-		System.out.println("Data in users' table thourgh injected userRepo: "+userRepositor.findAll());
+		System.out.println("Data in users' table thourgh injected userRepo: "+userRepository.findAll());
 	}
 }
