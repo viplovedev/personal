@@ -75,25 +75,7 @@ public class SecurityConfig extends  WebSecurityConfigurerAdapter {
     @Override
 	public void configure(HttpSecurity http) throws Exception {
 		
-		/**http
-			.authorizeRequests()
-				.antMatchers("/finance").hasRole("FINANCE")
-				.antMatchers("/accounts").hasRole("ACCOUNTS")
-				.antMatchers("/software").hasRole("SOFTWARE")
-				.and()
-			.formLogin();*/
-		
-		/**AuthenticationManager sharedObject = http.getSharedObject(AuthenticationManager.class);
-		FilterSecurityInterceptor securityInterceptor 
-		= createFilterSecurityInterceptor(metadataSource, authenticationManagerBean());
-	
-		http.authorizeRequests();
-		http.addFilter(securityInterceptor);
-		http.setSharedObject(FilterSecurityInterceptor.class, securityInterceptor);
-		http.formLogin();*/
-    	
-    	
-    	Map<String, String> roleUrlMap = urlService.getRoleUrlMap();
+		Map<String, String> roleUrlMap = urlService.getRoleUrlMap();
     	
     	ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry authorizeRequests = http
 		.authorizeRequests();
