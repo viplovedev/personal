@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- <context:component-scan base-package="com.in28minutes.spring.basics"/> -->
+
+	<bean 	id="autowireDependentByType" 
+			class="dev.viplove.springbootstarter.service.AutowireDependent"
+			autowire="byType">
+	</bean>
+
+	<bean 	id="autowireDependentByName" 
+			class="dev.viplove.springbootstarter.service.AutowireDependent"
+			autowire="byName">
+	</bean>
+
+	<bean 	id="autowireDependentByConstructor" 
+			class="dev.viplove.springbootstarter.service.AutowireDependent"
+			autowire="constructor">
+	</bean>
+
+	<bean id="autowireNo" class="java.lang.String">
+		<constructor-arg value="This is not autowired" />
+	</bean>
+
+	<bean name="dependencyStr" class="java.lang.String">
+		<constructor-arg value="This is autowired by name!" />
+	</bean>
+
+<bean id="joeDaessin2" class="dev.viplove.springbootstarter.model.Joe" primary="true">
+	<property name="name" value="Pankaj"></property>
+	<qualifier value="pankaj"></qualifier>
+</bean>
+
+<bean id="joeDaessin" class="dev.viplove.springbootstarter.model.Joe">
+	<property name="name" value="Joe Daessin"></property>
+	<qualifier value="joeDaessin"></qualifier>
+</bean>
+
+</beans>
