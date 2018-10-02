@@ -29,6 +29,6 @@ public class SpringBootStarterApplication {
 	public void init() {
 
 		
-		System.out.println("Data in users' table thourgh injected userRepo: "+userRepository.findAll());
+		System.out.println("Data in users' table thourgh injected userRepo: "+userRepositor.findAll());
 	}
 }
