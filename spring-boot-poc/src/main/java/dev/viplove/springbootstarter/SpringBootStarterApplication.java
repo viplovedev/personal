@@ -24,6 +24,8 @@ public class SpringBootStarterApplication {
 		AutowireDependent a = applicationContext.getBean("autowireDependentByType",AutowireDependent.class);
 		System.out.println("Dependency value - :"+a.toString());
 		//test comment!
+		System.out.println("Commit to calc-divide branch");
+		
 	}
 	
 	@PostConstruct
