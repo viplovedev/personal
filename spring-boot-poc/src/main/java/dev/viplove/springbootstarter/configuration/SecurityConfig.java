@@ -84,7 +84,7 @@ public class SecurityConfig extends  WebSecurityConfigurerAdapter {
     		authorizeRequests.antMatchers(a.getKey()).hasRole(a.getValue());
     	}
     	
-		authorizeRequests
+		authorizeRequests.anyRequest().authenticated()
 			.and()
 		.formLogin()
 		.successHandler(successHandler);
@@ -97,7 +97,7 @@ public class SecurityConfig extends  WebSecurityConfigurerAdapter {
 			
 			@Override
 			public boolean matches(CharSequence rawPassword, String encodedPassword) {
-				return true;
+				return false;
 			}
 			
 			@Override
